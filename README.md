@@ -5,3 +5,24 @@ TArray, TString
 
  - тестовове описание для проверки обновления через композер
 0.3.9
+
+Example:
+ - collection
+
+        $collection = new TCollection(A::class);
+        $collection = new TCollection(A::class, [...]);
+        $collection = TCollection::new(A::class, [...]);
+
+ - array
+
+       $array = new TArray(['1', '2', '3'])->map(function() {
+             //foreach
+       });
+
+       $array = new TArray(['1', '2', '3'])->foreach(function() {
+             //foreach
+       });
+
+       $array = new TArray(['1', '2', '3'])->filter(function() {
+             //foreach
+       });
