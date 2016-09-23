@@ -1,0 +1,7 @@
+build:
+    dependencies:
+        before:
+            - composer install
+    environment:
+        php:
+            version: 7.0.8
