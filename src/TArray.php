@@ -1,5 +1,5 @@
 <?php
-namespace Types;
+namespace ToolsPhp\Types;
 
 
 use ArrayAccess;
@@ -11,9 +11,9 @@ use Generator;
 use Iterator;
 use IteratorAggregate;
 use Traversable;
-use Types\exception\TypeException;
-use Types\interfaces\ToJsonInterface;
-use Types\interfaces\Type;
+use ToolsPhp\Types\exception\TypeException;
+use ToolsPhp\Types\interfaces\ToJsonInterface;
+use ToolsPhp\Types\interfaces\Type;
 
 class TArray implements Type, ToJsonInterface, ArrayAccess, Countable, IteratorAggregate
 {

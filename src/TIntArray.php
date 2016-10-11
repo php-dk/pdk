@@ -1,6 +1,6 @@
 <?php
 
-namespace Types;
+namespace ToolsPhp\Types;
 
 
 class TIntArray extends TArray

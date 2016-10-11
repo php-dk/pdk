@@ -1,11 +1,11 @@
 <?php
 
-namespace Types\trains;
+namespace ToolsPhp\Types\trains;
 
 
 use ArrayIterator;
 use ReflectionClass;
-use Types\EnumException;
+use ToolsPhp\Types\EnumException;
 
 trait Enum
 {

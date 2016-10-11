@@ -1,8 +1,8 @@
 <?php
-namespace Types;
+namespace ToolsPhp\Types;
 
-use Types\exception\TypeException;
-use Types\interfaces\Type;
+use ToolsPhp\Types\exception\TypeException;
+use ToolsPhp\Types\interfaces\Type;
 
 class JSON implements Type
 {

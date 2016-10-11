@@ -1,5 +1,5 @@
 <?php
-namespace Types\tools;
+namespace ToolsPhp\ypes\tools;
 
 class Transliterate
 {

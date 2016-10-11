@@ -1,12 +1,12 @@
 <?php
-namespace Types\collections;
+namespace ToolsPhp\Types\collections;
 
 use Countable;
 use IteratorAggregate;
 use SplObjectStorage;
 use stdClass;
-use Types\exception\TypeException;
-use Types\TArray;
+use ToolsPhp\Types\exception\TypeException;
+use ToolsPhp\Types\TArray;
 
 class TCollection implements IteratorAggregate, Countable
 {

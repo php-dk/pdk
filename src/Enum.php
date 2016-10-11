@@ -1,13 +1,13 @@
 <?php
 
-namespace Types;
+namespace ToolsPhp\Types;
 
 
 use ArrayIterator;
 use ReflectionClass;
-use Types\exception\TypeException;
-use Types\interfaces\Type;
-use Types\trains\Enum as TraitEnum;
+use ToolsPhp\Types\exception\TypeException;
+use ToolsPhp\Types\interfaces\Type;
+use ToolsPhp\Types\trains\Enum as TraitEnum;
 
 abstract class Enum  implements \IteratorAggregate, Type
 {

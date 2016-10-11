@@ -1,6 +1,6 @@
 <?php
 
-namespace Types\exception;
+namespace ToolsPhp\Types\exception;
 
 
 class NullPointException extends TypeException

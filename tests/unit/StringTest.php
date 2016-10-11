@@ -1,7 +1,8 @@
 <?php
 
-use Types\tests\TestCase;
-use Types\TString;
+use ToolsPhp\Types\tests\TestCase;
+use ToolsPhp\Types\TString;
+use ToolsPhp\Types\TStringException;
 
 class StringTest extends TestCase
 {
@@ -50,7 +51,7 @@ class StringTest extends TestCase
     }
     public function testFormatFailed()
     {
-        $this->setExpectedException(\Types\TStringException::class);
+        $this->setExpectedException(TStringException::class);
         $str = (string)TString::new('{p1}{p2}{p3}')->format(['p1'=>'Hello', 'p2'=>' ']);
         static::assertEquals($str, 'Hello World');
     }

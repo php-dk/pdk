@@ -1,13 +1,13 @@
 <?php
 
-namespace Types\objects;
+namespace ToolsPhp\Types\objects;
 
 
-use Types\exception\TypeException;
-use Types\interfaces\ImageInterface;
-use Types\interfaces\ToJsonInterface;
-use Types\interfaces\Type;
-use Types\JSON;
+use ToolsPhp\Types\exception\TypeException;
+use ToolsPhp\Types\interfaces\ImageInterface;
+use ToolsPhp\Types\interfaces\ToJsonInterface;
+use ToolsPhp\Types\interfaces\Type;
+use ToolsPhp\Types\JSON;
 
 /**
  * Class Image

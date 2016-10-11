@@ -1,7 +1,7 @@
 <?php
-namespace Types;
+namespace ToolsPhp\Types;
 
-use Types\interfaces\Type;
+use ToolsPhp\Types\interfaces\Type;
 
 class TMoney implements Type
 {

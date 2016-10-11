@@ -1,6 +1,6 @@
 <?php
-use Types\Enum;
-use Types\tests\TestCase;
+use ToolsPhp\Types\Enum;
+use ToolsPhp\Types\tests\TestCase;
 
 class TestEnum extends Enum
 {

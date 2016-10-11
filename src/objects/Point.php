@@ -1,6 +1,6 @@
 <?php
 
-namespace Types\objects;
+namespace ToolsPhp\Types\objects;
 
 
 use Types\interfaces\ToJsonInterface;

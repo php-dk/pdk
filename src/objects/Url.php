@@ -1,7 +1,7 @@
 <?php
-namespace Types\objects;
+namespace ToolsPhp\Types\objects;
 
-use Types\TArray;
+use ToolsPhp\Types\TArray;
 
 class Url
 {

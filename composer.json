@@ -22,8 +22,8 @@
   },
   "autoload": {
     "psr-4": {
-      "Types\\": "src",
-      "Types\\tests\\": "tests"
+      "ToolsPhp\\Types\\": "src",
+      "ToolsPhp\\Types\\tests\\": "tests"
     }
   },
   "extra": {

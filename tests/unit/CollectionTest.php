@@ -1,9 +1,9 @@
 <?php
 
-use Types\collections\TCollection as Collection;
-use Types\collections\CollectionException;
-use Types\tests\TestCase;
-use Types\TString;
+use ToolsPhp\Types\collections\TCollection as Collection;
+use ToolsPhp\Types\collections\CollectionException;
+use ToolsPhp\Types\tests\TestCase;
+use ToolsPhp\Types\TString;
 
 class A
 {

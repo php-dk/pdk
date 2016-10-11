@@ -1,10 +1,10 @@
 <?php
 
-namespace Types\objects;
+namespace ToolsPhp\Types\objects;
 
-use Types\exception\TypeException;
-use Types\interfaces\ToJsonInterface;
-use Types\interfaces\Type;
+use ToolsPhp\Types\exception\TypeException;
+use ToolsPhp\Types\interfaces\ToJsonInterface;
+use ToolsPhp\Types\interfaces\Type;
 
 /**
  * Класс точка на карте

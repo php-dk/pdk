@@ -1,7 +1,7 @@
 <?php
 
-use Types\objects\Url;
-use Types\tests\TestCase;
+use ToolsPhp\Types\objects\Url;
+use ToolsPhp\Types\tests\TestCase;
 
 class UrlTest extends TestCase
 {

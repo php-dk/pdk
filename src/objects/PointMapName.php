@@ -6,7 +6,7 @@
  * Time: 14:27
  */
 
-namespace Types\objects;
+namespace ToolsPhp\Types\objects;
 
 /**
  * Иминованная точка

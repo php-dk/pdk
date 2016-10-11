@@ -1,5 +1,5 @@
 <?php
-namespace Types\exception;
+namespace ToolsPhp\Types\exception;
 
 class TypeException extends \Exception
 {

@@ -1,5 +1,5 @@
 <?php
-namespace Types\tests;
+namespace ToolsPhp\Types\tests;
 
 use PHPUnit_Framework_TestCase;
 

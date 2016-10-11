@@ -1,6 +1,6 @@
 <?php
 
-namespace Types\interfaces;
+namespace ToolsPhp\Types\interfaces;
 
 interface ImageInterface extends Type
 {

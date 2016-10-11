@@ -1,8 +1,9 @@
 <?php
 
-use Types\TArray;
-use Types\tests\TestCase;
-use Types\TIntArray;
+use ToolsPhp\Types\TArray;
+use ToolsPhp\Types\tests\TestCase;
+use ToolsPhp\Types\TIntArray;
+use ToolsPhp\Types\collections\TCollection;
 
 class ArrayTest extends TestCase
 {
@@ -24,7 +25,7 @@ class ArrayTest extends TestCase
         $array = new TArray();
         static::assertTrue(TArray::isArray($array));
 
-        $array = new \Types\collections\TCollection();
+        $array = new TCollection();
         static::assertTrue(TArray::isArray($array));
 
         $array = [];

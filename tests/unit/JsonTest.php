@@ -1,8 +1,8 @@
 <?php
 
-use Types\JSON;
-use Types\JSONException;
-use Types\tests\TestCase;
+use ToolsPhp\Types\JSON;
+use ToolsPhp\Types\JSONException;
+use ToolsPhp\Types\tests\TestCase;
 
 class JsonTest extends TestCase
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace Types;
+namespace ToolsPhp\Types;
 
 use Countable;
 use Traversable;
-use Types\exception\TypeException;
-use Types\interfaces\ToJsonInterface;
-use Types\interfaces\Type;
+use ToolsPhp\Types\exception\TypeException;
+use ToolsPhp\Types\interfaces\ToJsonInterface;
+use ToolsPhp\Types\interfaces\Type;
 
 /**
  *

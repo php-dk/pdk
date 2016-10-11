@@ -1,10 +1,10 @@
 <?php
 
-namespace Types\yandex;
+namespace ToolsPhp\Types\yandex;
 
 
-use Types\interfaces\ImageInterface;
-use Types\objects\PointMap;
+use ToolsPhp\Types\interfaces\ImageInterface;
+use ToolsPhp\Types\objects\PointMap;
 
 class Image implements ImageInterface
 {
