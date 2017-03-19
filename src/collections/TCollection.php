@@ -55,8 +55,8 @@ class TCollection implements IteratorAggregate, Countable
             throw new CollectionException('Невозможно добавить в коллекцию скалярный тип');
         }
 
-        if (!$model instanceof $this->template) {
-            throw new CollectionException("Коллекция не может добавить этот класс");
+        if (!is_a($model, $this->template)) {
+            throw new CollectionException("Коллекция не может добавить этот класс ".get_class($model)." $this->template");
         }
 
 
