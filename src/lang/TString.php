@@ -3,6 +3,8 @@
 namespace PDK\lang;
 
 
+use ArrayAccess;
+use Countable;
 use IteratorAggregate;
 use Traversable;
 
@@ -13,8 +15,8 @@ use Traversable;
  */
 class TString extends TObject implements
     IteratorAggregate,
-    \Countable,
-    \ArrayAccess,
+    Countable,
+    ArrayAccess,
     ScalarInterface
 {
     /** @var  string */
@@ -33,9 +35,9 @@ class TString extends TObject implements
         $this->string = $string;
     }
 
-    public static function new($string): self
+    public static function new($object): self
     {
-        return new static($string);
+        return new static($object);
     }
 
     public function charAt(int $index): string
@@ -219,9 +221,14 @@ class TString extends TObject implements
         }
     }
 
+    public function toString(): TString
+    {
+        return new TString($this->string);
+    }
+
     public function __toString()
     {
-        return $this->string;
+        return (string)$this->string;
     }
 
     public function count()

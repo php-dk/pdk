@@ -1,7 +1,8 @@
 <?php
 
-use ToolsPhp\Types\objects\Url;
-use ToolsPhp\Types\tests\TestCase;
+
+use PDK\net\Url;
+use PDK\tests\TestCase;
 
 class UrlTest extends TestCase
 {
@@ -16,7 +17,7 @@ class UrlTest extends TestCase
         static::assertEquals($url->getPath(), '/foo/');
 
         static::assertEquals($url->getQuery(), 'gat=12&get2=13');
-        static::assertEquals($url->getQueryArray()->toArray(), ['gat' => 12, 'get2' => 13]);
+        static::assertEquals($url->getQueryArray()->getValue(), ['gat' => 12, 'get2' => 13]);
         static::assertEquals($url->getFragment(), 'stop');
 
         $url->setQuery(['data'=> 12]);
@@ -30,7 +31,6 @@ class UrlTest extends TestCase
 
         $url->setFragment('yes');
         static::assertEquals($url->toString(), 'https://realtor.im/foo/foo2?data=12#yes');
-
     }
     
 }

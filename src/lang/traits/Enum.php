@@ -1,11 +1,9 @@
 <?php
 
-namespace ToolsPhp\Types\trains;
-
+namespace PDK\lang\traits;
 
 use ArrayIterator;
 use ReflectionClass;
-use ToolsPhp\Types\EnumException;
 
 trait Enum
 {

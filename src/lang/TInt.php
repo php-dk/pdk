@@ -3,7 +3,7 @@
 namespace PDK\lang;
 
 
-class TInt extends TObject implements OperationInterface
+class TInt extends AbstractNumber
 {
     /** @var  int|null */
     protected $int;

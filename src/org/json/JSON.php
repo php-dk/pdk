@@ -1,10 +1,9 @@
 <?php
-namespace ToolsPhp\Types;
 
-use ToolsPhp\Types\exception\TypeException;
-use ToolsPhp\Types\interfaces\Type;
+namespace PDK\org\json;
 
-class JSON implements Type
+
+class JSON
 {
     /**
      * @param $json
@@ -41,16 +40,5 @@ class JSON implements Type
 
         return $json;
     }
-
-}
-
-class JSONException extends TypeException
-{
-    public function __construct($message, $code = null, $previous = null)
-    {
-        $message = 'Ошибка парсинга JSON : ' . $message;
-        parent::__construct($message, $code, $previous);
-    }
-
 
 }

@@ -27,6 +27,15 @@ class CollectionTest extends TestCase
         static::assertEquals(0, $collection->count());
     }
 
+    public function testAddScalars()
+    {
+        $collection = new TCollection(TString::class);
+        $collection->add(new TString('hello'));
+        $collection->add('world');
+
+        static::assertCount(2, $collection);
+    }
+
     public function testInitDefaultCollection()
     {
         $collection = new TCollection;
@@ -100,6 +109,7 @@ class CollectionTest extends TestCase
         $stringCollection->add(new TString("World"));
 
         $str = $stringCollection->toArray()->implode();
+
         static::assertEquals($str->getValue(), "Hello World");
     }
 

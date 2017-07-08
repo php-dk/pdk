@@ -1,8 +1,9 @@
 <?php
-use ToolsPhp\Types\Enum;
-use ToolsPhp\Types\tests\TestCase;
 
-class TestEnum extends Enum
+
+use PDK\tests\TestCase;
+
+class TestEnum extends  \PDK\lang\TEnum
 {
     const CONST_1 = 1;
     const CONST_2 = 2;

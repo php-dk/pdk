@@ -1,8 +1,9 @@
 <?php
 
-use ToolsPhp\Types\JSON;
-use ToolsPhp\Types\JSONException;
-use ToolsPhp\Types\tests\TestCase;
+
+use PDK\org\json\JSON;
+use PDK\org\json\JSONException;
+use PDK\tests\TestCase;
 
 class JsonTest extends TestCase
 {
@@ -19,7 +20,7 @@ class JsonTest extends TestCase
 
     public function testDecodeFail()
     {
-        $this->setExpectedException(JSONException::class);
+        $this->expectException(JSONException::class);
         $this->assertEquals(JSON::decode('{"a":12,,}', true), ['a' => 12]);
     }
 }

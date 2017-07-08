@@ -8,6 +8,11 @@ use PDK\tests\TestCase;
 
 class StringTest extends TestCase
 {
+    public function testConvertInString()
+    {
+        static::assertEquals('1', (string)TString::new('1'));
+    }
+
     public function testReplace()
     {
         static::assertEquals("12 12", (string)TString::new("12 33")->replace('33', '12'));

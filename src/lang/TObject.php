@@ -9,18 +9,13 @@ class TObject
         return $this == $object;
     }
 
-    final public function toTString(): TString
-    {
-        return new TString(static::class);
-    }
-
-    final public function toString(): string
+    public function toString(): TString
     {
         return new TString(static::class);
     }
 
     public function __toString()
     {
-        return (string)$this->toTString();
+        return (string)$this->toString();
     }
 }

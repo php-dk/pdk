@@ -5,6 +5,7 @@ namespace PDK\util;
 use Countable;
 use IteratorAggregate;
 use PDK\lang\Exception;
+use PDK\lang\ScalarInterface;
 use PDK\lang\TArray;
 use PDK\lang\TObject;
 use SplObjectStorage;
@@ -58,7 +59,8 @@ class TCollection extends TObject implements
     protected function createObject($model)
     {
         if (is_scalar($model)) {
-            throw new Exception('Невозможно добавить в коллекцию скалярный тип');
+            $template = $this->template;
+           return new $template($model);
         }
 
         if (!is_a($model, $this->template)) {
@@ -257,7 +259,7 @@ class TCollection extends TObject implements
 
     public function toArray(): TArray
     {
-        return new TArray($this->data);
+        return new TArray(iterator_to_array($this->data));
     }
 
 
