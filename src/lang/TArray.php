@@ -4,7 +4,7 @@ namespace PDK\lang;
 
 use ArrayAccess;
 use Countable;
-use Traversable;
+use PDK\lang\traits\ArrayAccessTrait;
 
 class TArray extends TObject implements
     Countable,

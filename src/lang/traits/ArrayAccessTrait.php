@@ -1,6 +1,6 @@
 <?php
 
-namespace PDK\lang;
+namespace PDK\lang\traits;
 
 
 trait ArrayAccessTrait
