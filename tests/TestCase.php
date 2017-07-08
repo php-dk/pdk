@@ -1,10 +1,7 @@
 <?php
-namespace ToolsPhp\Types\tests;
+namespace PDK\tests;
 
-use PHPUnit_Framework_TestCase;
-
-class TestCase extends PHPUnit_Framework_TestCase
+class TestCase extends \PHPUnit\Framework\TestCase
 {
-    protected $backupGlobals = false;
 
 }

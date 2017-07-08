@@ -76,63 +76,9 @@ class TString implements Type, ToJsonInterface, Countable, \IteratorAggregate
         return new static($text);
     }
 
-    /**
-     * (string)TString::new('{p1} World')->format(['p1'=>'Hello']) === 'Hello World'
-     *
-     * @param array $params
-     *
-     * @return \Types\TString
-     * @throws \Types\TStringException
-     */
-    public function format(array $params): self
-    {
-        $reg = $this->getPregMatchAllParams('/\{(?<var>[a-zA-Z0-9]+)\}/');
-        foreach ($reg as $item) {
-            $var = $item['var'];
-            $value = $params[$var] ?? false;
-            if (false === $value) {
-                throw new TStringException("TString::format - ключ $var - не найден в параметрах замены");
-            }
-
-            $this->replace($item[0], $value);
-        }
-
-        return new static($this->toString());
-    }
-
-    /**
-     * @return static
-     */
-    public function lower()
-    {
-        $this->_text = mb_strtolower($this->_text);
-
-        return $this;
-    }
-
-    /**
-     * @return static
-     */
-    public function upper()
-    {
-        $this->_text = mb_strtoupper($this->_text);
-
-        return $this;
-    }
 
 
-    /**
-     * @param $search
-     * @param $replace
-     *
-     * @return $this
-     */
-    public function replace($search, $replace)
-    {
-        $this->_text = str_replace($search, $replace, $this->_text);
 
-        return $this;
-    }
 
 
     /**
@@ -149,15 +95,6 @@ class TString implements Type, ToJsonInterface, Countable, \IteratorAggregate
 
     }
 
-    /**
-     * @return $this
-     */
-    public function trim()
-    {
-        $this->_text = trim($this->_text);
-
-        return $this;
-    }
 
 
     /**

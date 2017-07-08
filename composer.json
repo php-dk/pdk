@@ -1,9 +1,10 @@
 {
-  "name": "toolsphp/types",
-  "description": "toolsphp base types.",
+  "name": "toolsphp/PJK",
+  "description": "php development kit",
   "license": "MIT",
   "keywords": [
-    "Types"
+    "development",
+    "kit"
   ],
   "authors": [
     {
@@ -12,23 +13,18 @@
     }
   ],
   "require": {
-    "php": ">=7.0"
+    "php": ">=7.1"
   },
   "require-dev": {
-    "phpunit/phpunit": "5.4"
+    "phpunit/phpunit": "6.0"
   },
   "scripts": {
     "test": "./vendor/bin/phpunit  -c ./phpunit.xml"
   },
   "autoload": {
     "psr-4": {
-      "ToolsPhp\\Types\\": "src",
-      "ToolsPhp\\Types\\tests\\": "tests"
-    }
-  },
-  "extra": {
-    "branch-alias": {
-      "dev-master": "0.3.x-dev"
+      "PDK\\": "src",
+      "PDK\\tests\\": "tests"
     }
   }
 }

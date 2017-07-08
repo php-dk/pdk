@@ -1,14 +1,20 @@
 <?php
-namespace ToolsPhp\Types\collections;
+
+namespace PDK\util;
 
 use Countable;
 use IteratorAggregate;
+use PDK\lang\Exception;
+use PDK\lang\TArray;
+use PDK\lang\TObject;
 use SplObjectStorage;
 use stdClass;
-use ToolsPhp\Types\exception\TypeException;
-use ToolsPhp\Types\TArray;
+use PDK\lang\OperationInterface;
 
-class TCollection implements IteratorAggregate, Countable
+class TCollection extends TObject implements
+    IteratorAggregate,
+    Countable,
+    OperationInterface
 {
     /** @var  SplObjectStorage */
     protected $data;
@@ -52,11 +58,11 @@ class TCollection implements IteratorAggregate, Countable
     protected function createObject($model)
     {
         if (is_scalar($model)) {
-            throw new CollectionException('Невозможно добавить в коллекцию скалярный тип');
+            throw new Exception('Невозможно добавить в коллекцию скалярный тип');
         }
 
         if (!is_a($model, $this->template)) {
-            throw new CollectionException("Коллекция не может добавить этот класс ".get_class($model)." $this->template");
+            throw new Exception("Коллекция не может добавить этот класс ".get_class($model)." $this->template");
         }
 
 
@@ -84,24 +90,24 @@ class TCollection implements IteratorAggregate, Countable
      *
      * @param static|array $collection
      *
-     * @throws CollectionException
+     * @throws Exception
      */
     public function addAll($collection)
     {
         if ($collection instanceof static) {
             if ($collection->template !== $this->template) {
-                throw new CollectionException(
+                throw new Exception(
                     'Невозможно объединить коллекции с разными шаблонами
                 ');
             }
         }
 
-        if (TArray::isArray($collection)) {
+        if (is_iterable($collection)) {
             foreach ($collection as $item) {
                 $this->add($item);
             }
         } else {
-            throw new CollectionException('Добавить в коллекцию можно только перебираемые типы');
+            throw new Exception('Добавить в коллекцию можно только перебираемые типы');
         }
 
     }
@@ -221,7 +227,7 @@ class TCollection implements IteratorAggregate, Countable
 
             if ($tmp) {
                 $isRm = true;
-                $array->append($value);
+                $array->add($value);
             }
         }
 
@@ -262,9 +268,4 @@ class TCollection implements IteratorAggregate, Countable
     {
         return $this->data;
     }
-}
-
-class CollectionException extends TypeException
-{
-
 }
