@@ -28,6 +28,9 @@ class IntTest extends TestCase
         $int = new TInt(1);
         $int = $int->add(1);
         static::assertEquals('2', (string)$int);
+
+        $int = $int->add(new TInt(2));
+        static::assertEquals('4', (string)$int);
     }
 
 }

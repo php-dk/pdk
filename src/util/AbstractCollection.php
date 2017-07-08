@@ -5,20 +5,23 @@ namespace PDK\util;
 use Countable;
 use IteratorAggregate;
 use PDK\lang\Exception;
-use PDK\lang\ScalarInterface;
 use PDK\lang\TArray;
 use PDK\lang\TObject;
 use SplObjectStorage;
 use stdClass;
 use PDK\lang\OperationInterface;
 
-class TCollection extends TObject implements
+/**
+ * Class TCollection
+ * @package PDK\util
+ */
+abstract class AbstractCollection extends TObject implements
     IteratorAggregate,
     Countable,
-    OperationInterface
+    OperationInterface,
+    CollectionInterface
 {
-    /** @var  SplObjectStorage */
-    protected $data;
+    protected $list = [];
 
     /**
      * @var string
@@ -38,7 +41,6 @@ class TCollection extends TObject implements
     public function __construct(...$args)
     {
         $this->template = $args[0] ?? stdClass::class;
-        $this->data = new SplObjectStorage();
 
         $data = $args[1] ?? [];
         foreach ($data as $item) {
@@ -83,7 +85,7 @@ class TCollection extends TObject implements
     public function add($model)
     {
         $model = $this->createObject($model);
-        $this->data->attach($model);
+        $this->list[] = $model;
     }
 
     /**
@@ -118,21 +120,38 @@ class TCollection extends TObject implements
     /**
      * Removes all elements from the invoking collection.
      */
-    public function clear()
+    public function clear(): void
     {
-        $this->data = new SplObjectStorage();
+        $this->list = [];
     }
 
     /**
      * Returns true if obj is an element of the invoking collection. Otherwise, returns false.
      *
-     * @param object $obj
-     *
+     * @param $object
      * @return bool
+     * @internal param $obj
+     *
      */
-    public function contains($obj): bool
+    public function contains($object): bool
     {
-        return $this->data->contains($obj);
+        if ($object instanceof TObject) {
+            foreach ($this as $element) {
+                if ($object->equals($element)) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        foreach ($this as $element) {
+            if ($object == $element) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     /**
@@ -164,7 +183,7 @@ class TCollection extends TObject implements
      */
     public function equals($obj): bool
     {
-        foreach ($this->data as $item) {
+        foreach ($this->list as $item) {
             if ($item === $obj) {
                 return true;
             }
@@ -180,7 +199,7 @@ class TCollection extends TObject implements
      */
     public function isEmpty() : bool
     {
-        return $this->data->count() === 0;
+        return !!$this->list;
     }
 
     public function empty(): bool
@@ -193,14 +212,14 @@ class TCollection extends TObject implements
      * Removes one instance of obj from the invoking collection. Returns true if the element was removed. Otherwise,
      * returns false.
      *
-     * @param $obj
+     * @param $index
      *
      * @return bool
      */
-    public function remove($obj): bool
+    public function remove($index)
     {
-        $status = $this->contains($obj);
-        $this->data->detach($obj);
+        $status = $this->contains($index);
+        unset($this->list[$index]);
 
         return $status;
     }
@@ -213,14 +232,14 @@ class TCollection extends TObject implements
      *
      * @return bool
      */
-    public function removeAll(self $collection): bool
+    public function removeAll($collection)
     {
         $array = new TArray();
         $isRm = false;
         foreach ($collection as $value) {
 
             $tmp = false;
-            foreach ($this->data as $n => $item) {
+            foreach ($this->list as $n => $item) {
                 if ($value === $item) {
                     $tmp = true;
                     break;
@@ -233,7 +252,7 @@ class TCollection extends TObject implements
             }
         }
 
-        $this->data = $array;
+        $this->list = $array;
 
         return $isRm;
     }
@@ -254,12 +273,12 @@ class TCollection extends TObject implements
      */
     public function count(): int
     {
-        return $this->data->count();
+        return count($this->list);
     }
 
     public function toArray(): TArray
     {
-        return new TArray(iterator_to_array($this->data));
+        return new TArray($this->list);
     }
 
 
@@ -268,6 +287,6 @@ class TCollection extends TObject implements
      */
     public function getIterator()
     {
-        return $this->data;
+        return new \ArrayIterator($this->list);
     }
 }

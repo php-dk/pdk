@@ -1,35 +1,26 @@
 <?php
 
+namespace PDK\tests\unit\util;
+
 use PDK\lang\TString;
 use PDK\tests\TestCase;
-use PDK\util\TCollection;
+use PDK\util\AbstractCollection;
+use PDK\tests\mock\TestClassA as A;
+use PDK\tests\mock\EmptyTestClassB as B;
 
-class A
+abstract class AbstractCollectionTest extends TestCase
 {
-    var $i = 0;
+    abstract public function buildCollection(...$args) : AbstractCollection;
 
-    public function __construct($i)
-    {
-        $this->i = $i;
-    }
-
-}
-
-class B
-{
-}
-
-class CollectionTest extends TestCase
-{
     public function testInit()
     {
-        $collection = new TCollection(A::class);
+        $collection = $this->buildCollection(A::class);
         static::assertEquals(0, $collection->count());
     }
 
     public function testAddScalars()
     {
-        $collection = new TCollection(TString::class);
+        $collection = $this->buildCollection(TString::class);
         $collection->add(new TString('hello'));
         $collection->add('world');
 
@@ -38,25 +29,25 @@ class CollectionTest extends TestCase
 
     public function testInitDefaultCollection()
     {
-        $collection = new TCollection;
+        $collection = $this->buildCollection();
         static::assertEquals(0, $collection->count());
     }
 
     public function testAppend()
     {
-        $collection = new TCollection(A::class, [
+        $collection = $this->buildCollection(A::class, [
             new A(1),
             new A(2)
         ]);
         static::assertEquals(2, $collection->count());
 
 
-        $collection2 = new TCollection(A::class);
+        $collection2 = $this->buildCollection(A::class);
         $collection2->add(new A(3));
         static::assertEquals(1, $collection2->count());
 
 
-        $collection3 = new TCollection(A::class);
+        $collection3 = $this->buildCollection(A::class);
         $collection3->addAll($collection);
         $collection3->addAll($collection2);
         $collection3->add(new A(5));
@@ -64,7 +55,7 @@ class CollectionTest extends TestCase
         static::assertEquals(4, $collection3->count());
 
 
-        $collection4 = new TCollection(A::class);
+        $collection4 = $this->buildCollection(A::class);
         $collection4->addAll((function () {
              yield new A(1);
              yield new A(2);
@@ -76,7 +67,7 @@ class CollectionTest extends TestCase
 
     public function testAppendFail()
     {
-        $collection = new TCollection(A::class, [
+        $collection = $this->buildCollection(A::class, [
             new A(1),
             new A(2)
         ]);
@@ -88,8 +79,8 @@ class CollectionTest extends TestCase
     public function testIterator()
     {
 
-        /** @var TCollection $stringCollection */
-        $stringCollection = new class extends TCollection
+        /** @var AbstractCollection $stringCollection */
+        $stringCollection = new class extends AbstractCollection
         {
             public function __construct(...$args)
             {

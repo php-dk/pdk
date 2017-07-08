@@ -14,10 +14,15 @@ class TInt extends AbstractNumber
      */
     public function __construct($int = null)
     {
-        $this->int = $int;
+        if ($int instanceof ScalarInterface) {
+            $this->int = $int->getValue();
+        } elseif (is_scalar($int)) {
+            $this->int = (int)$int;
+        }
     }
 
-    public function getValue()
+
+    public function getValue(): int
     {
         return $this->int;
     }
@@ -47,7 +52,6 @@ class TInt extends AbstractNumber
         return (string)$this->int;
     }
 
-
     public function add($object)
     {
         if ($object instanceof TInt) {
@@ -55,5 +59,10 @@ class TInt extends AbstractNumber
         }
 
         return new static($this->int + (int)(string)$object);
+    }
+
+    public static function instanceof ($object): bool
+    {
+        return is_integer($object) || $object instanceof static;
     }
 }

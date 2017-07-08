@@ -221,6 +221,8 @@ class TString extends TObject implements
         }
     }
 
+
+
     public function toString(): TString
     {
         return new TString($this->string);
@@ -260,8 +262,15 @@ class TString extends TObject implements
         unset($this->string[$offset]);
     }
 
-    public function getValue()
+    public function getValue(): string
     {
         return $this->string;
     }
+
+    public static function instanceof ($object): bool
+    {
+        return is_string($object) || $object instanceof static;
+    }
+
+
 }

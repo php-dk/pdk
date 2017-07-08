@@ -2,16 +2,17 @@
 
 use PDK\lang\TArray;
 use PDK\tests\TestCase;
-use PDK\util\TCollection;
+use PDK\util\AbstractCollection;
 
 class ArrayTest extends TestCase
 {
     public function testAll()
     {
         $array = new TArray([1, 2, 3]);
-        static::assertEquals($array->map(function ($i) {
+        $newArray = $array->map(function ($i) {
             return $i + 1;
-        })->getValue(), [2, 3, 4]);
+        });
+        static::assertEquals($newArray->getValue(), [2, 3, 4]);
 
         $array = new TArray([1, 2, 3]);
         static::assertEquals($array->filter(function ($i) {
@@ -24,7 +25,7 @@ class ArrayTest extends TestCase
         $array = new TArray();
         static::assertTrue(TArray::isIterable($array));
 
-        $array = new TCollection();
+        $array = new \PDK\util\TList();
         static::assertTrue(TArray::isIterable($array));
 
         $array = [];

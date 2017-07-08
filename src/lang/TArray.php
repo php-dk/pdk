@@ -4,18 +4,21 @@ namespace PDK\lang;
 
 use ArrayAccess;
 use Countable;
+use IteratorAggregate;
 use PDK\lang\traits\ArrayAccessTrait;
+use PDK\lang\traits\IterableTrait;
 
 class TArray extends TObject implements
     Countable,
     ArrayAccess,
     OperationInterface,
     ScalarInterface,
-    IterableInterface
+    IteratorAggregate
 {
     protected $array = [];
 
     use ArrayAccessTrait;
+    use IterableTrait;
 
     protected function &getArray()
     {
@@ -111,36 +114,9 @@ class TArray extends TObject implements
     /**
      * @return array
      */
-    public function getValue()
+    public function getValue(): array
     {
         return $this->array;
-    }
-
-    /**
-     * @param callable $fund
-     *
-     * @return $this;
-     */
-    public function map(callable $fund)
-    {
-       $res = [];
-       foreach ($this as $item) {
-           $res[] = $fund($item);
-       }
-
-       return new static($res);
-    }
-
-    public function filter(callable $fund)
-    {
-        $res = [];
-        foreach ($this as $item) {
-            if ($fund($item)) {
-                $res[] = $item;
-            }
-        }
-
-        return new static($res);
     }
 
     /**
@@ -150,7 +126,6 @@ class TArray extends TObject implements
      */
     public function offsetGet($index)
     {
-
         if (strpos($index, ',') !== false) {
 
             $attributes = explode(', ', $index);
@@ -170,5 +145,8 @@ class TArray extends TObject implements
         return new \ArrayIterator($this->array);
     }
 
-
+    public static function instanceof ($object): bool
+    {
+        return is_iterable($object) || $object instanceof static;
+    }
 }
