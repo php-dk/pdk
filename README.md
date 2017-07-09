@@ -2,12 +2,6 @@
 
 PHP Development Kit
 
-- Описание типов данных через ООП
-TArray, TString
-
- - тестовове описание для проверки обновления через композер
-0.3.9
-
 Example:
  - collection
 
