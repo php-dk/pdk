@@ -73,7 +73,6 @@ abstract class AbstractCollectionTest extends TestCase
         ]);
         $this->expectException(\phpdk\lang\Exception::class);
         $collection->add(new B);
-        static::assertEquals(2, $collection->count());
     }
 
     public function testIterator()

@@ -79,40 +79,26 @@ abstract class AbstractCollection extends TObject implements
      * already a member of the collection, or if the collection does not allow duplicates.
      *
      * @param $model
-     *
-     * @throws CollectionException
      */
     public function add($model)
     {
-        $model = $this->createObject($model);
-        $this->list[] = $model;
+        $this->list[] = $this->createObject($model);
     }
 
     /**
      * Adds all the elements of c to the invoking collection. Returns true if the operation succeeded (i.e., the
      * elements were added). Otherwise, returns false.
      *
-     * @param static|array $collection
+     * @param  $collection
      *
+     * @return mixed|void
      * @throws Exception
      */
     public function addAll($collection)
     {
-        if ($collection instanceof static) {
-            if ($collection->template !== $this->template) {
-                throw new Exception(
-                    'Невозможно объединить коллекции с разными шаблонами
-                ');
-            }
-        }
-
-        if (is_iterable($collection)) {
             foreach ($collection as $item) {
                 $this->add($item);
             }
-        } else {
-            throw new Exception('Добавить в коллекцию можно только перебираемые типы');
-        }
 
     }
 

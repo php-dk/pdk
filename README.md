@@ -9,6 +9,14 @@ TArray, TString
 0.3.9
 
 Example:
+ - lang 
+ ```php
+       $int = new TInt(1);
+       $int->getValue(); // return int 1 
+       TInt::instanceof(1); //true
+       TInt::instanceof(new TInt(1)); //true
+       TInt::instanceof('1'); //false
+   
  - collection
 
         $collection = new TCollection(A::class);

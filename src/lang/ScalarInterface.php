@@ -9,5 +9,5 @@ interface ScalarInterface
      */
     public function getValue();
 
-    public static function instanceof($object): bool;
+
 }

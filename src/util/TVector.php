@@ -24,9 +24,9 @@ class TVector extends AbstractList implements CollectionInterface
     {
         if (TInt::instanceof($index)) {
             $index = new TInt($index);
-            $this->list[$index->getValue()] = $element;
+            $this->list[$index->getValue()] = $this->createObject($element);
         } else {
-            $this->list[] = $element;
+            parent::add($index);
         }
     }
 
@@ -55,11 +55,6 @@ class TVector extends AbstractList implements CollectionInterface
     public function remove($index)
     {
         // TODO: Implement remove() method.
-    }
-
-    public function addAll($collection)
-    {
-        // TODO: Implement addAll() method.
     }
 
     public function removeAll($collection)

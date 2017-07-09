@@ -18,4 +18,9 @@ class TObject
     {
         return (string)$this->toString();
     }
+
+    public static function instanceof($object): bool
+    {
+        return $object instanceof static;
+    }
 }
