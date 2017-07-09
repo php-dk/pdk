@@ -1,9 +1,10 @@
 [![wercker status](https://app.wercker.com/status/f0d86138ad4234bf0dcf42597bebc088/s/master "wercker status")](https://app.wercker.com/project/byKey/f0d86138ad4234bf0dcf42597bebc088)
 
-PHP Development Kit
+# PHP Development Kit
 
-Example:
-# Lang (pdk\lang\*)
+more information [a link](https://github.com/php-dk/pdk/wiki)
+
+## Lang (pdk\lang\*)
 
 ### Integer (pdk\lang\TInt)
  
