@@ -8,6 +8,8 @@ class TInt extends AbstractNumber
     /** @var  int|null */
     protected $int;
 
+    public const MAX = PHP_INT_MAX;
+
     /**
      * TInt constructor.
      * @param $int
@@ -15,14 +17,13 @@ class TInt extends AbstractNumber
     public function __construct($int = null)
     {
         if ($int instanceof ScalarInterface) {
-            $this->int = $int->getValue();
+            $this->int = (int)$int->getValue();
         } elseif (is_scalar($int)) {
             $this->int = (int)$int;
         }
     }
 
-
-    public function getValue(): int
+    public function getValue(): ?int
     {
         return $this->int;
     }

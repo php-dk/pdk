@@ -2,7 +2,7 @@
 
 namespace phpdk\lang;
 
-abstract class AbstractNumber extends TObject implements
+abstract class AbstractNumber extends AbstractScalar implements
     OperationInterface,
     ScalarInterface
 {

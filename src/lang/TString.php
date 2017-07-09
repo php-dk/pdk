@@ -13,7 +13,7 @@ use Traversable;
  * @package phpdk\lang
  * @see https://docs.oracle.com/javase/6/docs/api/java/lang/String.html
  */
-class TString extends TObject implements
+class TString extends AbstractScalar implements
     IteratorAggregate,
     Countable,
     ArrayAccess,

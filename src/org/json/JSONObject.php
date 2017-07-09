@@ -2,9 +2,11 @@
 
 namespace phpdk\org\json;
 
-class JSONObject
+use phpdk\lang\TObject;
+
+class JSONObject extends TObject
 {
-    protected $json;
+    protected $array;
 
     /**
      * JSONObject constructor.
@@ -12,13 +14,13 @@ class JSONObject
      */
     public function __construct($json)
     {
-        $this->json = $json;
+        $this->array = JSON::decode($json, true);
     }
 
 
     public function toArray()
     {
-        return JSON::decode($this->json, true);
+        return $this->array;
     }
 
 }

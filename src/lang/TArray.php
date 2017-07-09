@@ -8,7 +8,7 @@ use IteratorAggregate;
 use phpdk\lang\traits\ArrayAccessTrait;
 use phpdk\lang\traits\IterableTrait;
 
-class TArray extends TObject implements
+class TArray extends AbstractScalar implements
     Countable,
     ArrayAccess,
     OperationInterface,

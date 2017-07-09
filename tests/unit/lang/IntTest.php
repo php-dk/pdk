@@ -17,6 +17,35 @@ class IntTest extends TestCase
         static::assertFalse($int->equals('1'));
     }
 
+
+    public function testIntLarge()
+    {
+        $int = new TInt('1234567891234567812345678');
+        static::assertTrue($int->equals($int));
+        static::assertEquals($int->getValue(), TInt::MAX);
+    }
+
+    public function testIntCompare()
+    {
+        $int = new TInt(5);
+
+        static::assertTrue($int->equals(5));
+        static::assertTrue($int->less(6));
+        static::assertTrue($int->lessEquals(5));
+        static::assertTrue($int->more(4));
+        static::assertTrue($int->moreEquals(5));
+
+        static::assertTrue($int->equals(new TInt(5)));
+        static::assertTrue($int->less(new TInt(6)));
+        static::assertTrue($int->lessEquals(new TInt(5)));
+        static::assertTrue($int->more(new TInt(4)));
+        static::assertTrue($int->moreEquals(new TInt(5)));
+
+        static::assertFalse($int->equals('5'));
+        static::assertFalse($int->equals(new TString('5')));
+    }
+
+
     public function testIntToString()
     {
         $int = new TInt(1);
