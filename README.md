@@ -5,9 +5,9 @@ PHP Development Kit
 Example:
  - collection
 
-        $collection = new TCollection(A::class);
-        $collection = new TCollection(A::class, [...]);
-        $collection = TCollection::new(A::class, [...]);
+        $collection = new TList(A::class);
+        $collection = new TVector(A::class, [...]);
+        $collection = TList::new(A::class, [...]);
 
  - array
 
