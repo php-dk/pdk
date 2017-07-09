@@ -6,8 +6,8 @@ Example:
  - collection
 
         $collection = new TList(A::class);
-        $collection = new TVector(A::class, [...]);
         $collection = TList::new(A::class, [...]);
+        
 
  - array
 
