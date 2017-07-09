@@ -3,22 +3,41 @@
 PHP Development Kit
 
 Example:
- - lang 
+# Lang (pdk\lang\*)
+
+### Integer (pdk\lang\TInt)
+ 
  ```php
        $int = new TInt(1);
        $int->getValue(); // return int 1 
        TInt::instanceof(1); //true
        TInt::instanceof(new TInt(1)); //true
        TInt::instanceof('1'); //false
-   
- - collection
+       
+       //compare
+       $int = new TInt(5);
+       static::assertTrue($int->equals(5));
+       static::assertTrue($int->less(6));
+       static::assertTrue($int->lessEquals(5));
+       static::assertTrue($int->more(4));
+       static::assertTrue($int->moreEquals(5));
+       static::assertTrue($int->equals(new TInt(5)));
+       static::assertTrue($int->less(new TInt(6)));
+       static::assertTrue($int->lessEquals(new TInt(5)));
+       static::assertTrue($int->more(new TInt(4)));
+       static::assertTrue($int->moreEquals(new TInt(5)));
+       static::assertFalse($int->equals('5'));
+       static::assertFalse($int->equals(new TString('5')));
+```
+### TString
 
-        $collection = new TList(A::class);
-        $collection = TList::new(A::class, [...]);
-        
+```php
+       $string = new TString("hello world");
+       [$hello, $world]  = $string->split(' ');
+```
 
- - array
-
+### TArray
+```php
        $array = (new TArray(['1', '2', '3']))->map(function() {
              //foreach
        });
@@ -26,3 +45,14 @@ Example:
        $array = (new TArray(['1', '2', '3']))->filter(function() {
              //foreach
        });
+```
+# Utils
+
+## Collection (pdk\util\*)
+### TList
+```php
+      $collection = new TList(A::class);
+      $collection = TList::new(A::class, [...]);
+```        
+
+      
