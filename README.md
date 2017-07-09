@@ -2,7 +2,7 @@
 
 # PHP Development Kit
 
-more information [a link](https://github.com/php-dk/pdk/wiki)
+more information [in wiki](https://github.com/php-dk/pdk/wiki)
 
 ## Lang (pdk\lang\*)
 
