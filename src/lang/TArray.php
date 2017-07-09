@@ -1,12 +1,12 @@
 <?php
 
-namespace PDK\lang;
+namespace phpdk\lang;
 
 use ArrayAccess;
 use Countable;
 use IteratorAggregate;
-use PDK\lang\traits\ArrayAccessTrait;
-use PDK\lang\traits\IterableTrait;
+use phpdk\lang\traits\ArrayAccessTrait;
+use phpdk\lang\traits\IterableTrait;
 
 class TArray extends TObject implements
     Countable,

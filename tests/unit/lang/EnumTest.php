@@ -1,9 +1,9 @@
 <?php
 
 
-use PDK\tests\TestCase;
+use phpdk\tests\TestCase;
 
-class TestEnum extends  \PDK\lang\TEnum
+class TestEnum extends  \phpdk\lang\TEnum
 {
     const CONST_1 = 1;
     const CONST_2 = 2;

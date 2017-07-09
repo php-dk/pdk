@@ -1,8 +1,8 @@
 <?php
 
 
-use PDK\io\image\Image;
-use PDK\tests\TestCase;
+use phpdk\io\image\Image;
+use phpdk\tests\TestCase;
 
 class ImageTest extends TestCase
 {

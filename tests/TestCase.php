@@ -1,5 +1,6 @@
 <?php
-namespace PDK\tests;
+
+namespace phpdk\tests;
 
 class TestCase extends \PHPUnit\Framework\TestCase
 {

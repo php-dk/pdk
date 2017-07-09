@@ -1,9 +1,9 @@
 <?php
 
 
-use PDK\org\json\JSON;
-use PDK\org\json\JSONException;
-use PDK\tests\TestCase;
+use phpdk\org\json\JSON;
+use phpdk\org\json\JSONException;
+use phpdk\tests\TestCase;
 
 class JsonTest extends TestCase
 {

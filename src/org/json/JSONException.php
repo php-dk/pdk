@@ -1,8 +1,8 @@
 <?php
 
-namespace PDK\org\json;
+namespace phpdk\org\json;
 
-use PDK\lang\Exception;
+use phpdk\lang\Exception;
 
 class JSONException extends Exception
 {

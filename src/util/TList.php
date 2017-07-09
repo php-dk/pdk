@@ -1,9 +1,9 @@
 <?php
 
-namespace PDK\util;
+namespace phpdk\util;
 
 
-use PDK\lang\ScalarInterface;
+use phpdk\lang\ScalarInterface;
 
 class TList extends AbstractCollection
 {

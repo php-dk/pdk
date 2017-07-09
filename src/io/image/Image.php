@@ -1,12 +1,12 @@
 <?php
 
-namespace PDK\io\image;
+namespace phpdk\io\image;
 
-use PDK\lang\TObject;
-use PDK\lang\TString;
-use PDK\net\Url;
-use PDK\org\json\JSON;
-use PDK\org\json\JSONException;
+use phpdk\lang\TObject;
+use phpdk\lang\TString;
+use phpdk\net\Url;
+use phpdk\org\json\JSON;
+use phpdk\org\json\JSONException;
 
 class Image extends TObject
 {

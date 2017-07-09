@@ -1,6 +1,6 @@
 <?php
 
-namespace PDK\lang;
+namespace phpdk\lang;
 
 
 class TInt extends AbstractNumber

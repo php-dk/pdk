@@ -1,8 +1,8 @@
 <?php
 
-namespace PDK\io\image;
+namespace phpdk\io\image;
 
-use PDK\lang\Exception;
+use phpdk\lang\Exception;
 
 class ImageException extends Exception
 {

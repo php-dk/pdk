@@ -1,8 +1,8 @@
 <?php
 
-use PDK\lang\TArray;
-use PDK\tests\TestCase;
-use PDK\util\AbstractCollection;
+use phpdk\lang\TArray;
+use phpdk\tests\TestCase;
+use phpdk\util\AbstractCollection;
 
 class ArrayTest extends TestCase
 {
@@ -25,7 +25,7 @@ class ArrayTest extends TestCase
         $array = new TArray();
         static::assertTrue(TArray::isIterable($array));
 
-        $array = new \PDK\util\TList();
+        $array = new \phpdk\util\TList();
         static::assertTrue(TArray::isIterable($array));
 
         $array = [];

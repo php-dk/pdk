@@ -1,9 +1,9 @@
 <?php
 
-namespace PDK\net;
+namespace phpdk\net;
 
-use PDK\lang\TArray;
-use PDK\lang\TString;
+use phpdk\lang\TArray;
+use phpdk\lang\TString;
 
 class Url
 {

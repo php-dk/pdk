@@ -1,8 +1,8 @@
 <?php
 
 
-use PDK\net\Url;
-use PDK\tests\TestCase;
+use phpdk\net\Url;
+use phpdk\tests\TestCase;
 
 class UrlTest extends TestCase
 {

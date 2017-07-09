@@ -1,6 +1,6 @@
 <?php
 
-namespace PDK\lang\traits;
+namespace phpdk\lang\traits;
 
 use ArrayIterator;
 use ReflectionClass;

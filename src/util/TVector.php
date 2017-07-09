@@ -1,10 +1,10 @@
 <?php
 
-namespace PDK\util;
+namespace phpdk\util;
 
 
-use PDK\lang\TInt;
-use PDK\lang\TObject;
+use phpdk\lang\TInt;
+use phpdk\lang\TObject;
 
 class TVector extends AbstractList implements CollectionInterface
 {

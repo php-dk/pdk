@@ -1,6 +1,6 @@
 <?php
 
-namespace PDK\lang;
+namespace phpdk\lang;
 
 
 use ArrayAccess;
@@ -10,7 +10,7 @@ use Traversable;
 
 /**
  * Class TString
- * @package PDK\lang
+ * @package phpdk\lang
  * @see https://docs.oracle.com/javase/6/docs/api/java/lang/String.html
  */
 class TString extends TObject implements

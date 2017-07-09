@@ -1,9 +1,9 @@
 <?php
 
-namespace PDK\lang;
+namespace phpdk\lang;
 
 
-use PDK\lang\traits\Enum;
+use phpdk\lang\traits\Enum;
 
 abstract class TEnum  implements \IteratorAggregate
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace PDK\tests\unit\util;
+namespace phpdk\tests\unit\util;
 
-use PDK\lang\TInt;
-use PDK\lang\TString;
-use PDK\util\AbstractCollection;
-use PDK\util\TList;
-use PDK\tests\mock\TestClassA as AL;
+use phpdk\lang\TInt;
+use phpdk\lang\TString;
+use phpdk\util\AbstractCollection;
+use phpdk\util\TList;
+use phpdk\tests\mock\TestClassA as AL;
 
 class ListTest extends AbstractCollectionTest
 {
@@ -81,7 +81,7 @@ class ListTest extends AbstractCollectionTest
 
     public function testFailedAddStringInIntListElement()
     {
-        $this->expectException(\PDK\lang\Exception::class);
+        $this->expectException(\phpdk\lang\Exception::class);
         $list = new TList(TInt::class);
         $list->add(new TString("zero"));
     }

@@ -6,11 +6,11 @@
  * Time: 1:58
  */
 
-namespace PDK\util;
+namespace phpdk\util;
 
 /**
  * Interface CollectionInterface
- * @package PDK\util
+ * @package phpdk\util
  *
  * @see https://docs.oracle.com/javase/7/docs/api/java/util/Collection.html
  */

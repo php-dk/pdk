@@ -1,10 +1,10 @@
 <?php
 
-namespace PDK\tests\unit\lang;
+namespace phpdk\tests\unit\lang;
 
-use PDK\lang\TArray;
-use PDK\lang\TString;
-use PDK\tests\TestCase;
+use phpdk\lang\TArray;
+use phpdk\lang\TString;
+use phpdk\tests\TestCase;
 
 class StringTest extends TestCase
 {

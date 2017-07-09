@@ -1,6 +1,6 @@
 <?php
 
-namespace PDK\util;
+namespace phpdk\util;
 
 
 abstract class AbstractList extends AbstractCollection

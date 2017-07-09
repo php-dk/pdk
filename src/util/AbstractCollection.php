@@ -1,19 +1,19 @@
 <?php
 
-namespace PDK\util;
+namespace phpdk\util;
 
 use Countable;
 use IteratorAggregate;
-use PDK\lang\Exception;
-use PDK\lang\TArray;
-use PDK\lang\TObject;
+use phpdk\lang\Exception;
+use phpdk\lang\TArray;
+use phpdk\lang\TObject;
 use SplObjectStorage;
 use stdClass;
-use PDK\lang\OperationInterface;
+use phpdk\lang\OperationInterface;
 
 /**
  * Class TCollection
- * @package PDK\util
+ * @package phpdk\util
  */
 abstract class AbstractCollection extends TObject implements
     IteratorAggregate,

@@ -1,10 +1,10 @@
 <?php
 
-namespace PDK\tests\unit\lang;
+namespace phpdk\tests\unit\lang;
 
-use PDK\lang\TInt;
-use PDK\lang\TString;
-use PDK\tests\TestCase;
+use phpdk\lang\TInt;
+use phpdk\lang\TString;
+use phpdk\tests\TestCase;
 
 class IntTest extends TestCase
 {

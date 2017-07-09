@@ -1,6 +1,6 @@
 <?php
 
-namespace PDK\org\json;
+namespace phpdk\org\json;
 
 class JSONObject
 {

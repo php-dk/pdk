@@ -1,12 +1,12 @@
 <?php
 
-namespace PDK\tests\unit\util;
+namespace phpdk\tests\unit\util;
 
-use PDK\lang\TString;
-use PDK\tests\TestCase;
-use PDK\util\AbstractCollection;
-use PDK\tests\mock\TestClassA as A;
-use PDK\tests\mock\EmptyTestClassB as B;
+use phpdk\lang\TString;
+use phpdk\tests\TestCase;
+use phpdk\util\AbstractCollection;
+use phpdk\tests\mock\TestClassA as A;
+use phpdk\tests\mock\EmptyTestClassB as B;
 
 abstract class AbstractCollectionTest extends TestCase
 {
@@ -71,7 +71,7 @@ abstract class AbstractCollectionTest extends TestCase
             new A(1),
             new A(2)
         ]);
-        $this->expectException(\PDK\lang\Exception::class);
+        $this->expectException(\phpdk\lang\Exception::class);
         $collection->add(new B);
         static::assertEquals(2, $collection->count());
     }

@@ -1,10 +1,10 @@
 <?php
 
-namespace PDK\tests\unit\util;
+namespace phpdk\tests\unit\util;
 
 
-use PDK\util\AbstractCollection;
-use PDK\util\TVector;
+use phpdk\util\AbstractCollection;
+use phpdk\util\TVector;
 
 class VectorTest extends AbstractCollectionTest
 {

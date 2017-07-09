@@ -3,6 +3,7 @@
   "description": "php development kit",
   "license": "MIT",
   "keywords": [
+    "php",
     "development",
     "kit"
   ],
@@ -23,8 +24,8 @@
   },
   "autoload": {
     "psr-4": {
-      "PDK\\": "src",
-      "PDK\\tests\\": "tests"
+      "phpdk\\": "src",
+      "phpdk\\tests\\": "tests"
     }
   }
 }

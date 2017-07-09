@@ -1,6 +1,6 @@
 <?php
 
-namespace PDK\tests\mock;
+namespace phpdk\tests\mock;
 
 class EmptyTestClassB
 {
