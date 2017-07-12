@@ -4,12 +4,11 @@ namespace phpdk\util;
 
 use Countable;
 use IteratorAggregate;
-use phpdk\lang\Exception;
+use phpdk\lang\exceptions\Exception;
+use phpdk\lang\OperationInterface;
 use phpdk\lang\TArray;
 use phpdk\lang\TObject;
-use SplObjectStorage;
 use stdClass;
-use phpdk\lang\OperationInterface;
 
 /**
  * Class TCollection

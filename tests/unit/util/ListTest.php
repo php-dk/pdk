@@ -2,6 +2,7 @@
 
 namespace phpdk\tests\unit\util;
 
+use phpdk\lang\exceptions\Exception;
 use phpdk\lang\TInt;
 use phpdk\lang\TString;
 use phpdk\util\AbstractCollection;
@@ -81,7 +82,7 @@ class ListTest extends AbstractCollectionTest
 
     public function testFailedAddStringInIntListElement()
     {
-        $this->expectException(\phpdk\lang\Exception::class);
+        $this->expectException(Exception::class);
         $list = new TList(TInt::class);
         $list->add(new TString("zero"));
     }

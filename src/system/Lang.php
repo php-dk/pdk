@@ -1,13 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dima
- * Date: 09.07.17
- * Time: 19:09
- */
 
-namespace phpdk\lang;
+namespace phpdk\system;
 
+
+use phpdk\lang\exceptions\Exception;
+use phpdk\lang\ScalarInterface;
 
 class Lang
 {

@@ -2,6 +2,7 @@
 
 namespace phpdk\tests\unit\util;
 
+use phpdk\lang\exceptions\Exception;
 use phpdk\lang\TString;
 use phpdk\tests\TestCase;
 use phpdk\util\AbstractCollection;
@@ -71,7 +72,7 @@ abstract class AbstractCollectionTest extends TestCase
             new A(1),
             new A(2)
         ]);
-        $this->expectException(\phpdk\lang\Exception::class);
+        $this->expectException(Exception::class);
         $collection->add(new B);
     }
 
@@ -102,8 +103,5 @@ abstract class AbstractCollectionTest extends TestCase
 
         static::assertEquals($str->getValue(), "Hello World");
     }
-
-
-
 
 }

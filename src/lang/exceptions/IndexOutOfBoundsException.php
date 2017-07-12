@@ -1,6 +1,6 @@
 <?php
 
-namespace phpdk\lang;
+namespace phpdk\lang\exceptions;
 
 
 class IndexOutOfBoundsException extends Exception

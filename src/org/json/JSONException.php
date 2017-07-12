@@ -2,7 +2,7 @@
 
 namespace phpdk\org\json;
 
-use phpdk\lang\Exception;
+use phpdk\lang\exceptions\Exception;
 
 class JSONException extends Exception
 {

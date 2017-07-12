@@ -2,7 +2,6 @@
 
 namespace phpdk\util;
 
-
 use phpdk\lang\TObject;
 use phpdk\lang\TString;
 
@@ -28,7 +27,7 @@ class TDate extends TObject
     /**
      * @var
      */
-    private $hrs;
+    private $hours;
     /**
      * @var
      */
@@ -38,25 +37,22 @@ class TDate extends TObject
      */
     private $sec;
 
-    public function __construct($year, $month, $date, $hrs, $min, $sec)
+    public function __construct($year = null, $month = null, $date = null, $hours = null, $min = null, $sec = null)
     {
         $this->year = $year;
         $this->month = $month;
         $this->date = $date;
-        $this->hrs = $hrs;
+        $this->hours = $hours;
         $this->min = $min;
         $this->sec = $sec;
     }
 
-    public static function parse($string): self
-    {
-        //return new sta
-    }
 
     public function getTime(): int
     {
         return 12;
     }
+
 
 
 

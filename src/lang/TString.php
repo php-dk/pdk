@@ -2,10 +2,10 @@
 
 namespace phpdk\lang;
 
-
 use ArrayAccess;
 use Countable;
 use IteratorAggregate;
+use phpdk\lang\exceptions\IndexOutOfBoundsException;
 use Traversable;
 
 /**
@@ -220,7 +220,6 @@ class TString extends AbstractScalar implements
             yield $this->string[$i];
         }
     }
-
 
 
     public function toString(): TString

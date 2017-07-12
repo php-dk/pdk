@@ -2,6 +2,8 @@
 
 namespace phpdk\lang;
 
+use phpdk\lang\exceptions\Exception;
+use phpdk\system\Lang;
 
 abstract class AbstractScalar extends TObject implements CompareInterface, ScalarInterface
 {
@@ -50,6 +52,4 @@ abstract class AbstractScalar extends TObject implements CompareInterface, Scala
     {
         return $this->compare('===', $object);
     }
-
-
 }

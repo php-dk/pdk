@@ -3,6 +3,7 @@
 namespace phpdk\lang\traits;
 
 use ArrayIterator;
+use phpdk\lang\exceptions\EnumException;
 use ReflectionClass;
 
 trait Enum

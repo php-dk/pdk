@@ -21,6 +21,10 @@ trait IterableTrait
         return new static($res);
     }
 
+    /**
+     * @param callable $fund
+     * @return static
+     */
     public function filter(callable $fund)
     {
         $res = [];
