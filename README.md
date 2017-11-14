@@ -54,6 +54,12 @@ more information [in wiki](https://github.com/php-dk/pdk/wiki)
 ```php
       $collection = new TList(A::class);
       $collection = TList::new(A::class, [...]);
+      
+      #scalar
+      $list = new TList(TInt::class);
+      $list->add(new TInt(0));
+      $list->add(1);
+      $list->add(2);
 ```        
 
       
