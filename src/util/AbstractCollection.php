@@ -192,6 +192,13 @@ abstract class AbstractCollection extends TObject implements
         return $this->isEmpty();
     }
 
+    /**
+     * @return static
+     */
+    public static function emptyList()
+    {
+        return new static([]);
+    }
 
     /**
      * Removes one instance of obj from the invoking collection. Returns true if the element was removed. Otherwise,

@@ -28,6 +28,8 @@ class Url
      */
     protected $query = false;
 
+    protected $port;
+
     /**
      * Url constructor.
      *
@@ -67,6 +69,10 @@ class Url
             $str .= $this->getHost();
         }
 
+        if ($this->getPort()) {
+            $str .= ':' . $this->getPort();
+        }
+
         if ($this->getPath()) {
             $str .= $this->getPath();
         }
@@ -95,6 +101,14 @@ class Url
         $this->scheme = $scheme;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPort()
+    {
+        return $this->port;
     }
 
     /**
