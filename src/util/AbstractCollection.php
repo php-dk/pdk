@@ -184,7 +184,7 @@ abstract class AbstractCollection extends TObject implements
      */
     public function isEmpty() : bool
     {
-        return !!$this->list;
+        return !$this->list;
     }
 
     public function empty(): bool
